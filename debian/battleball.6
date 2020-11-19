@@ -1,0 +1,298 @@
+.TH BATTLEBALL 6 "August 27, 1998" "Debian/GNU Linux" 
+
+.SH NAME battleball \- military version of soccer
+
+.SH SYNOPSIS
+.HP
+.B battleball
+.RI "[\|" options "\|] " Players " ..."
+
+.SH DESCRIPTION
+.B BattleBall
+is essentially the game of soccer, played with military
+vehicles rather than with people.  Each player drives a tank or flies
+a helicopter, and tries to move the ball down the playfield to the
+other team's goal.  In BattleBall, the teams' "goals" are their
+headquarters buildings, positioned at the ends of the playfield.
+Hitting another team's headquarters building with the ball scores a
+point, knocking the building over in the process.  Yes, realism was
+my ultimate goal in this game.
+.SH OPTIONS
+.TP
+.B 
+\-ag ##l     
+Set players' auto-gunner settings.  The argument of this
+option is three characters: a single\-digit number
+specifying firing accuracy, a single\-digit number
+specifying firing frequency, and one of the following
+letters specifying target selection:
+.br
+a \- fire at all targets
+.br
+b \- fire only at the ball
+.br
+v \- fire only at vehicles
+.br
+n \- no targets (i.e. do not fire)
+.br
+This option affects players which appear after it on the
+command line.  The default is 43a.
+.TP
+.B
+\-ff d|b|t   
+Make accidental 'friendly fire' from fellow teammates:
+.br
+d \- dangerous (the default)
+.br
+b \- blocked or
+.br
+t \- transparent.
+.TP 
+.B \-grav #    
+Set gravity.  Defaults to 0.031 m/iteration^2.
+.TP
+.B \-help      
+Show the help screen
+.TP
+.B \-id #       
+Set the inter-frame delay.  If the game runs too slow, set
+this lower; if the game seems to lag behind your
+keystrokes, set this higher.  Defaults to 30 milliseconds.
+.TP
+.B \-mtns #    
+Set the number of mountains.  Defaults to 8.
+.TP
+.B \-noag      
+Disable human players' auto-gunner capability.
+.TP
+.B \-noap      
+Disable human players' auto-pilot capability.
+.TP
+.B \-nobang    
+Disable 'bangs' (the flashes at the end of a gun barrel)
+.TP
+.B \-noflyby    
+Disable aircraft fly\-bys.
+.TP
+.B \-nopause   
+Disable players' use of the pause ('P') key.
+.TP
+.B \-noresize  
+Do not automatically resize the window to fit the graphics.
+.TP
+.B \-noshade   
+Disable shadows.  Uses less cpu time.
+.TP
+.B \-out        
+Allow vehicles to go outside of the playfield.
+.TP
+.B \-pts #      
+Set number of points required to win.  Defaults to 3.
+.TP
+.B \-rad #      
+Set the 'radius' of the playfield.  Defaults to 100 meters.
+.TP
+.B \-sb         
+Single-buffer the game windows.
+.TP
+.B \-sd #       
+Set the startup delay.  The game will wait for this many
+seconds for players to get ready.
+.TP
+.B \-simple    
+Use simpler graphics.  Uses less cpu time.
+.TP
+.B \-snum #     
+Set number of shells per player.  Defaults to 3.
+.TP
+.B \-spow #     
+Set shell power.  Defaults to 1.6.
+.TP
+.B \-svel #     
+Set shell muzzle velocity.  Defaults to 1.5 meters/frame.
+At higher velocities, some collisions may not be reliably
+detected.
+.TP
+.B \-train      
+Include a train running on a track around the playfield.
+.TP
+.B \-trees #    
+Set the number of trees.  Defaults to 12.
+.TP
+.B \-wf         
+Use wireframe rendering.  Uses less cpu time.
+
+.SH "PLAYERS & TEAMS"
+.B Battleball
+is played with teams of human and computer players. Up to six teams
+can play at once, and teams may have any combination of human and
+computer players.  Human players are created by giving the name of an
+X display on the command line. Computer players are created by using
+the magic name 'comp' instead. 
+.PP
+Computer players may be created with specific auto-gunner settings.
+Use 'comp', followed by (no space) the three characters used in
+the \-ag option, e.g. 'comp67b'.
+This overrides the \-ag option.
+.PP
+Commas between names put players on the same team;
+spaces between names separate teams.
+Teams may have any mix of human and computer players.
+.PP
+At least one player (one team) must be specified on the command line.
+However, soccer with just one team is rather boring; 
+using two or more is strongly suggested.
+.PP
+Each team is assigned a color.  Tanks, helicopters, and headquarter
+buildings are all marked with the team's color.
+.SH PLAY
+When the game starts, each player is seated in her vehicle, in front
+of her goal, facing the ball at the center of the playfield.  Vehicles
+are, of course, armed with cannons, but these are primarily a means to
+an end.  Gunfire is good for forcing obstinate opponents out of your
+way, but gunfire doesn't destroy anything.  Gunfire is also good for
+blasting the ball across the playfield and into your opponent's HQ.
+.PP
+You use the keyboard to control your vehicle.  The commands that are
+available at any given time are shown at the bottom of the screen.
+.PP
+.B "Commands for all vehicles:"
+.RS
+.TP 
+.B 'I'
+(or up arrow.) Move forward.
+.TP
+.B 'J'
+(or left arrow.) Turn left.
+.TP
+.B 'K'
+(or down arrow.) Move back.
+.TP
+.B 'L'
+(or right arrow.) Turn right.
+.TP
+.B Space
+Fire.
+.TP
+.B 'P'
+Pause.
+.TP
+.B 'Q'
+Quit.
+.TP
+.B 'T'
+Transform tank to helicopter or vice versa.
+.TP
+.B 'A'
+Toggle autopilot.
+.TP
+.B 'G'
+Toggle autogunner.
+.TP
+.B 'V'
+Switch between view from vehicle, and view of vehicle from HQ.
+.TP
+.B Tab
+Show teams and scores.
+.RE
+.PP
+.B "Extra commands for tanks:"
+.RS
+.TP
+.B 'E'
+Raise barrel (shots go farther).
+.TP
+.B 'S'
+Rotate turret left.
+.TP
+.B 'D'
+Lower barrel.
+.TP
+.B 'F'
+Rotate turret right.
+.RE
+.PP
+The current angle of the barrel and turret are shown beneath the main
+display, next to the team insignia.
+.PP
+.B "Commands for helicopters:"
+.RS
+.TP
+.B 'E'
+Go up (note, your helicopter cannot fly on the ground).
+.TP
+.B 'S'
+Fly left.
+.TP
+.B 'D'
+Go down.
+.TP
+.B 'F'
+Fly right.
+.TP
+.B 'Y'
+Pitch forward.
+.TP
+.B 'H'
+Pitch back.
+.RE
+.PP
+The current elevation and pitch are shown beneath the main display,
+next to the team insignia.
+.PP
+The controls which are available to your vehicle  are always shown at
+the bottom of the screen. 
+.SH SCORING
+When there are two teams, scoring is the same as it is in soccer:
+scoring a "goal" is worth 1 point.  When there are more than two teams,
+scoring a goal earns 2 points, and the other teams besides the losing
+team receive 1 point each for defending their headquarters.
+
+.SH EXAMPLES
+.TP
+battleball :0
+Starts a game with only one player on only one team, a human player on
+the local X display.  Not a very interesting game.
+.TP
+battleball :0 comp
+A single human player vs. the computer, one-on-one.
+.TP
+battleball ford:0 chevy:0
+Two humans, head-to-head, one on the display "ford:0", one on "chevy:0".
+.TP
+battleball flavio:0  chirp:0,roar:0
+Sets up a one-player team against a two-player team.
+.TP
+battleball parrot:0,comp  raven:0  comp,comp
+Creates three teams with a mix of human and computer
+players.
+.TP
+battleball dunce:0  comp75a  comp,comp
+Creates three teams.  The first computer player gets
+special auto-gunner settings; the other computer players
+get default settings.
+
+.SH BUGS
+Using multiple X displays introduces certain security risks (which are
+beyond the scope of this document).  Networked games will require the
+use of the incredibly insecure xhost(1) command or the less insecure
+but rather complicated xauth(1) utility.  Do not play this game
+with people you don't know and trust.
+.PP
+Using multiple X displays also imposes performance overheads.  You
+will need fast network connections for multi-player games.
+.PP
+The game must render 3d graphics for each player in the game.  This
+can slow the game down dramatically as the number of players
+increases.  You can use various options to speed up the game, but you
+will eventually reach a point of diminishing returns.
+
+.SH "SEE ALSO"
+See  
+.B battleball 
+\-help and /usr/share/doc/battleball/README.gz for more information.
+.SH AUTHOR
+.B Battleball
+was written by Philip A. Hardin.
+.PP
+This man page was written by Chris Waters <xtifr@debian.org>.

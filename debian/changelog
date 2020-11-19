@@ -1,0 +1,136 @@
+battleball (2.0-17) unstable; urgency=low
+
+  * Build-dep on xutils-dev where xmkmf is now located (closes: #485196).
+  * Minor lintian cleanup on debian/rules.
+  * Fix minor manpage error.
+
+ -- Chris Waters <xtifr@debian.org>  Tue, 10 Jun 2008 00:43:50 -0700
+
+battleball (2.0-16.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix FTBFS with gcc-4.3.  Thanks to Kumar Appaiah for the initial work on
+    the patch.  (Closes: #461697)
+
+ -- James Vega <jamessan@debian.org>  Thu, 03 Apr 2008 12:11:35 -0400
+
+battleball (2.0-16) unstable; urgency=low
+
+  * Don't strip binaries if DEB_BUILD_OPTIONS=nostrip (closes: #436543).
+  * Moved to menu section Games/Action (closes: #432128).
+
+ -- Chris Waters <xtifr@debian.org>  Thu,  9 Aug 2007 03:18:55 -0700
+
+battleball (2.0-15) unstable; urgency=low
+
+  * Updated debian menu for menu systems that don't evaluate $DISPLAY; now
+    uses "sh -c" and exec (closes: #245697).
+  * Moved menu pixmap to /usr/share/pixmaps.
+  * Updated build-depends to reflect new X11 package splits.
+
+ -- Chris Waters <xtifr@debian.org>  Fri, 21 May 2004 12:58:21 -0700
+
+battleball (2.0-14) unstable; urgency=low
+
+  * Rebuilt for the Great g++3.2 conversion.
+  * Stripped colors in menu icon to meet menu standards.
+
+ -- Chris Waters <xtifr@debian.org>  Sun,  2 Mar 2003 16:41:19 -0800
+
+battleball (2.0-13) unstable; urgency=low
+
+  * Replaced the huge patch introduced in 2.0-11 with a smaller, simpler
+    patch that (properly) treats gcc < 3.0 as a special case.
+  * More patches to clean up various compilation warnings.
+
+ -- Chris Waters <xtifr@debian.org>  Fri, 15 Mar 2002 13:18:24 -0800
+
+battleball (2.0-12) unstable; urgency=low
+
+  * Removed libstdc++-dev from build-dependencies (already in
+    build-essential).  Closes: #105942
+  * Hacked debian/rules to cope with new xmkmf breakage.
+
+ -- Chris Waters <xtifr@debian.org>  Fri, 21 Sep 2001 11:21:10 -0700
+
+battleball (2.0-11) unstable; urgency=low
+
+  * Removed some ugly macros that were causing problems with g++
+    3.0. (closes #104837)
+
+ -- Chris Waters <xtifr@debian.org>  Sat, 14 Jul 2001 12:48:21 -0700
+
+battleball (2.0-10) unstable; urgency=low
+
+  * Fixed error that prevented compilation on new versions of g++.
+  * Added icon for debian menus.
+  * Major overhaul of man page.
+  * Switched to debhelper 3.x and dh_installman.
+
+ -- Chris Waters <xtifr@debian.org>  Sat, 12 May 2001 10:21:31 -0700
+
+battleball (2.0-9) unstable; urgency=low
+
+  * Updated standards version, added build-depends
+  * Rebuilt against XFree86-4.
+  * Now uses dh_installmanpages
+  * updated description to mention computer players and team play.
+
+ -- Chris Waters <xtifr@debian.org>  Mon, 15 Jan 2001 15:50:25 -0800
+
+battleball (2.0-8) unstable; urgency=low
+
+  * patched to fix segfault on Alpha (closes: Bug#49411)
+  * Updated to standards version 3.0.0.
+  * Build modified to use debhelper.
+  * Copyright refers to new location of GPL.
+  * Cleaned up diffs (Makefile, which gets rebuilt, no longer included).
+  
+ -- Chris Waters <xtifr@debian.org>  Sat, 13 Nov 1999 23:03:01 -0800
+
+battleball (2.0-7) unstable; urgency=low
+
+  * recompiled with glibc2.1 and such.
+  * fixed menu to use $DISPLAY rather than :0 (this seems to work)
+
+ -- Chris Waters <xtifr@debian.org>  Wed, 12 May 1999 13:59:06 -0700
+
+battleball (2.0-6) unstable; urgency=low
+
+  * Capitalized menu entry ("Battleball" not "battleball")
+
+ -- Chris Waters <xtifr@debian.org>  Mon,  8 Mar 1999 14:16:28 -0800
+
+battleball (2.0-5) frozen unstable; urgency=low
+
+  * fixed debian menu to point to correct binary location.
+  * new maintainer.
+  
+ -- Chris Waters <xtifr@debian.org>  Wed,  9 Dec 1998 01:43:10 -0800
+
+battleball (2.0-4) unstable; urgency=low
+
+  * Copyright is changed to GPL! moved to main 
+  * Fixed some errors that were coming up with new g++ (egcs)
+  * Wrote a manpage.
+  
+ -- Igor Grobman <igor@debian.org>  Thu, 27 Aug 1998 15:07:37 -0400
+
+battleball (2.0-3) unstable; urgency=low
+
+  * copyright file no longer compressed.
+
+ -- Igor Grobman <igor@debian.org>  Sun, 25 Jan 1998 18:23:50 -0500
+
+battleball (2.0-2) unstable; urgency=low
+
+  * renamed /usr/lib/menu/menu to /usr/lib/menu/battleball.
+
+ -- Igor Grobman <igor@debian.org>  Thu, 22 Jan 1998 18:24:47 -0500
+
+battleball (2.0-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Igor Grobman <igor@debian.org>  Mon,  5 Jan 1998 21:28:39 -0500
+

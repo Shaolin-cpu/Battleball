@@ -1,0 +1,24 @@
+This package was debianized by Igor Grobman igor@debian.org on
+Mon,  5 Jan 1998 21:28:39 -0500.
+
+It was downloaded from http://www.cs.utexas.edu/users/pahardin/cgi/download.cgi?os=src&ver=20 
+
+
+
+Copyright
+=========
+
+BattleBall is copyright (c) 1996, 1997 Philip A. Hardin.
+
+As of July 29, 1998, BattleBall is released under the terms of the
+GNU General Public License.  
+
+BattleBall comes with NO WARRANTY, not even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  It's free...what
+else would you expect?
+
+You should have received a copy of the GNU General Public License with
+your Debian GNU/Linux system, in /usr/share/common-licenses/GPL, or with
+the Debian GNU/Linux bash source package as the file COPYING.  If not,
+write to  the Free Software Foundation, Inc., 51 Franklin Street,
+Fifth Floor, Boston, MA 02110-1301 USA.
