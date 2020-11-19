@@ -1,0 +1,7 @@
+?package(battleball):\
+  needs="X11"\
+  section="Games/Sports"\
+  title="Battleball"\
+  longtitle="Battleball: Soccer with Tanks"\
+  icon="/usr/share/pixmaps/battleball.xpm"\
+  command="/bin/sh -c 'exec /usr/games/battleball $DISPLAY comp'"

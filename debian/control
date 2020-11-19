@@ -1,0 +1,16 @@
+Source: battleball
+Section: games 
+Priority: optional
+Maintainer: Chris Waters <xtifr@debian.org>
+Standards-Version: 3.6.1
+Build-Depends: xutils, libx11-dev, libxext-dev, debhelper (>= 4.0.0)
+
+Package: battleball
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: soccer game played with tanks or helicopters
+ BattleBall is essentially the game of soccer, played with military
+ vehicles rather than with people.  Each player drives a tank or flies
+ a helicopter, and tries to move the ball down the playfield to the
+ other team's goal.  Relatively unlimited number of human or computer
+ players can compete in teams or head-to-head.

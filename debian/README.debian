@@ -1,0 +1,14 @@
+battleball for DEBIAN
+----------------------
+
+Battleball has a wide variety of options; you can play against the
+computer or against other people, or both.  The default in the Debian
+menu selects a basic game against the computer, played on $DISPLAY.
+
+                                            -- Chris
+
+Current maintainer: Chris Waters <xtifr@debian.org>
+
+Original packager:
+
+Igor Grobman <igor@digicron.com>, Mon,  5 Jan 1998 21:28:39 -0500

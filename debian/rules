@@ -1,0 +1,72 @@
+#!/usr/bin/make -f
+# Based on sample rules file GNU copyright 1997 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+u=debian/battleball/usr
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+
+	xmkmf
+	$(MAKE) battleball	# just $(MAKE) no longer does The Right Thing
+
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp install-stamp
+
+	rm -rf build
+	-$(MAKE) clean
+#	make clean isn't perfect, and there's no make distclean
+	rm -rf bb/*.o bsp/*.o lib3d/*.o
+	rm -f Makefile
+
+	dh_clean
+
+install: install-stamp
+install-stamp: build-stamp
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	install -m 755 -o root -g root -s battleball $(u)/games
+	install -m 644 -o root -g root debian/battleball.xpm \
+		$(u)/share/pixmaps
+
+	touch install-stamp
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+#	dh_testversion
+	dh_testdir
+	dh_testroot
+	dh_installdocs
+	dh_installmenu
+	dh_installman debian/battleball.6
+	dh_installchangelogs CHANGELOG
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+source diff:
+	@echo >&2 'source and diff are obsolete - use dpkg-source -b'; false
+
+binary: binary-indep binary-arch
+ok: binary
+.PHONY: build clean binary-indep binary-arch binary install ok

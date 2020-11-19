@@ -12,9 +12,9 @@
 
 
 #ifdef __GNUC__
-char __stl_temp_buffer[__stl_buffer_size];
+char __stl_temp_buffer[16384]; //__stl_buffer_size does not exist in egcs.
 #else
-#include "tempbuf.cpp"    // quasi-hack necessary to use STL's stable_sort()
+#include "../stl/tempbuf.cpp"    // quasi-hack necessary to use STL's stable_sort()
 #endif
 
 
@@ -263,7 +263,7 @@ void player::CloseXStuff()
 
 void player::HandleKeyPress(KeySym k, bool pressed, gobList& gobs,
 			    tranGob* bbTrain) {
-  gobList::iterator gi;
+//  gobList::iterator gi;
   switch(k) {
     case XK_a:                  // toggle player/autonomous pilot
       if (pressed and autoPilotAllowed) {

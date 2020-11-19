@@ -42,7 +42,7 @@ Polygon3f bspPanel3d::asPolygon3f(pt3d pts[]) {
   }
 
   pt3d2Vec3f(normal,poly.plane_normal);
-  poly.material_index= (int) this;
+  poly.material_index= (size_t) this;
   return poly;
 }
 
